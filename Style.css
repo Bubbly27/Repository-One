@@ -1,0 +1,26 @@
+
+:root{
+    --firstRGBcolor: rgba(51, 40, 145, 0.8);
+    --secondRGBcolor: rgba(165, 58, 195, 0.74);
+    --thirdRGBcolor: rgba(0, 164, 45, 0.74)
+}
+
+#colorBody{
+    background: linear-gradient(to top, var( --firstRGBcolor),var(--secondRGBcolor)) no-repeat;
+    height: 100vh;
+}
+
+#colorBody{
+text-align: center;
+}
+
+
+
+button:hover{
+    box-shadow:5px 5px 5px 5px gray;
+    transition: box-shadow 100ms ease-out;
+}
+
+button{
+    border-radius: 10px;
+}

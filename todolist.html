@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TodoList with Javascript and Bootstrap</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    :root{
+        --c1: #003F5C;
+        --c2: #85085D;
+        --c3: #BC5090;
+        --c4: #DCB5FF;
+        --c5: #D9F2FF;
+        --c6: #A5BDFD;
+    }
+
+    body {                          /*circle*/ /*at bottom | left | right*/
+        background: radial-gradient(ellipse at top, var(--c1), var(--c2), var(--c3), transparent),radial-gradient(ellipse at top, var(--c4), var(--c5), var(--c6), transparent);
+        background-size: 400% 400%;
+        -webkit-animation: animateWebKitNice 12s ease-in-out infinite;
+        height: 100vh;
+    }
+
+    @-webkit-keyframes animateWebKitNice {
+        0%{background-position: 0 50%}
+        50%{background-position: 100% 100%}
+        100%{background-position: 0 50%}
+    }
+
+    .container{
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .btn{
+        grid-row: 4 / span 1;
+    }
+    .btn:hover{
+        border: 10px #003F5C double;
+    }
+
+</style>
+
+<body>
+
+<div class="container">
+<input type="text" id="myInput" placeholder="...">
+
+<button onclick="putTextInList()">Add New Task</button>
+
+<button> class="btn btn-outline-dark </button>
+
+<ul class="myUL">
+    <li>Make homemade ice-cream</li>
+    <li>research discord Bots</li>
+</ul>
+</div>
+
+<script>
+    function putTextInList() {
+        var inputField = document.getElementById("myInput").value;
+        var newListItem = document.createElement("li");
+        var textNode = document.createTextNode(inputField);
+        newListItem.appendChild(textNode);
+        document.querySelector(".myUL").appendChild(newListItem);
+        document.getElementById("myInput").value = " ";
+    }
+</script>
+
+</body>
+</html>
